@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* elements random species */
+.floating-species {
+  position: absolute;
+  width: 3.5rem;  /* default size */
+  height: 3.5rem;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 2px rgba(34, 197, 94, 0.7));
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Positions for each species (randomly spread across the viewport) */
+.species-1 { top: 10%; left: 15%; animation-name: float1; animation-duration: 9s; }
+.species-2 { top: 25%; left: 70%; animation-name: float2; animation-duration: 12s; }
+.species-3 { top: 50%; left: 30%; animation-name: float3; animation-duration: 11s; }
+.species-4 { top: 75%; left: 50%; animation-name: float4; animation-duration: 10s; }
+.species-5 { top: 15%; left: 80%; animation-name: float5; animation-duration: 14s; }
+.species-6 { top: 60%; left: 80%; animation-name: float6; animation-duration: 13s; }
+.species-7 { top: 40%; left: 10%; animation-name: float7; animation-duration: 16s; }
+
+/* Animations: smooth floating with translate and rotate */
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(15px, -20px) rotate(10deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-20px, 15px) rotate(-12deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10px, 25px) rotate(15deg); }
+}
+
+@keyframes float4 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-15px, -15px) rotate(-10deg); }
+}
+
+@keyframes float5 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, 20px) rotate(20deg); }
+}
+
+@keyframes float6 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-25px, 10px) rotate(-18deg); }
+}
+
+@keyframes float7 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(30px, -10px) rotate(25deg); }
+}
+
+/* Optional: scale variations for depth */
+.species-1, .species-4, .species-6 { transform-origin: center; animation-timing-function: ease-in-out; }
+.species-2, .species-5, .species-7 { animation-timing-function: ease-in-out; }
+.species-3 { animation-timing-function: ease-in-out; }
+
+
+
+    /* Add more species as needed */
+
+    /* Glow behind card */
+    .card-glow::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem; /* same as rounded-2xl */
+      box-shadow: 0 0 40px 10px rgba(34, 197, 94, 0.2);
+      z-index: -1;
+    }
